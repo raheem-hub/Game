@@ -12,9 +12,9 @@ document.getElementById('gameLevels').addEventListener('change', function() {
         
     }
 });
-// document.addEventListener('contextmenu', function(event) {
-//     event.preventDefault();
-// });
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
 
 document.addEventListener('keydown', function(event) {
     if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I') || (event.ctrlKey && event.key === 'U')) {
@@ -106,6 +106,8 @@ function retryGame() {
     document.getElementById('game-over').style.display = 'none';
     if (confirm("Are you sure you want to start a new game?")) {
         createGrid(gridSize);
+    }else{
+        endGame();
     }
     // Recreate the grid with the same size
 }
