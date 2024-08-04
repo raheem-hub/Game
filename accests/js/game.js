@@ -89,6 +89,7 @@ function endGame() {
     document.getElementById('game-over').style.display = 'block';
     document.getElementById('score').textContent = `Your Score: ${score}`;
     disableClicks(); // Disable further clicks on boxes
+    showBombEffect();
 }
 
 function disableClicks() {
@@ -110,4 +111,12 @@ function retryGame() {
         endGame();
     }
     // Recreate the grid with the same size
+}
+
+function showBombEffect() {
+    const bombEffect = document.getElementById('bomb-effect');
+    bombEffect.style.display = 'flex';
+    setTimeout(() => {
+        bombEffect.style.display = 'none';
+    }, 3000); // 3 seconds for the effect
 }
